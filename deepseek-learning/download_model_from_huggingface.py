@@ -92,5 +92,5 @@ if __name__ == "__main__":
     # --revision: 可选参数，默认值为 master，指定模型的具体版本或分支。
     # --outfile: 必需参数，指定转换后模型的输出文件路径。
     # --outtype: 可选参数，默认值为 f16，指定输出类型。
-    # python download_model_from_huggingface.py --model_name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --cache_dir /your/custom/cache/dir --revision your-revision-tag
-    # python download_model_from_huggingface.py --model_name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --cache_dir /your/custom/cache/dir --revision your-revision-tag --outfile /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf --outtype f16
+    # python3 download_model_from_huggingface.py --model_name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --cache_dir /root/data --revision your-revision-tag
+    # python3 download_model_from_huggingface.py --model_name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --cache_dir /root/data --revision master --outfile /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf --outtype f16
