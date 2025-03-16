@@ -86,9 +86,9 @@ root@VM-0-14-ubuntu:/home/ubuntu#
 ```
 
 ```bash
-root@VM-0-14-ubuntu:/home/ubuntu# mkdir -p ~/.ollama/models && echo "FROM /root/autodl-tmp/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf" > ~/.ollama/models/ds-r1-qw-7b.txt
+root@VM-0-14-ubuntu:/home/ubuntu# mkdir -p ~/.ollama/models && echo "FROM /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf" > ~/.ollama/models/ds-r1-qw-7b.txt
 root@VM-0-14-ubuntu:/home/ubuntu# cat ~/.ollama/models/ds-r1-qw-7b.txt
-FROM /root/autodl-tmp/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf
+FROM /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf
 root@VM-0-14-ubuntu:/home/ubuntu# vi ~/.ollama/models/ds-r1-qw-7b.txt
 root@VM-0-14-ubuntu:/home/ubuntu# ollama create  ds-qw-7b  -f  ~/.ollama/models/ds-r1-qw-7b.txt
 gathering model components ⠼
