@@ -1,5 +1,5 @@
-## Huggingface Download 
-脚本可使用 Huggingface 模型下载，并导入给 ollama 使用
+## Model Download 
+脚本可使用 Modelscope 模型下载，并导入给 ollama 使用 (通过模型格式转换)
 
 安装模型加速
 ```bash
@@ -8,7 +8,7 @@
 
 运行脚本
 ```python
-python download_model_from_huggingface.py --model_name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --cache_dir /your/custom/cache/dir --revision your-revision-tag --outfile /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf --outtype f16
+python3 download_model_from_huggingface.py --model_name deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --cache_dir /your/custom/cache/dir --revision your-revision-tag --outfile /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf --outtype f16
 ```
 
 ```python
@@ -85,10 +85,13 @@ Downloading [model-00001-of-000002.safetensors]: 100%|████████�
 root@VM-0-14-ubuntu:/home/ubuntu#
 ```
 
+- 当下载后，需要使用 GGUF 格式档案接入 Ollama 
+1. 写入 ~/.ollama/models
+
 ```bash
 root@VM-0-14-ubuntu:/home/ubuntu# mkdir -p ~/.ollama/models && echo "FROM /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf" > ~/.ollama/models/ds-r1-qw-7b.txt
 root@VM-0-14-ubuntu:/home/ubuntu# cat ~/.ollama/models/ds-r1-qw-7b.txt
-FROM /root/data/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf
+FROM /root/data /deepseek-ai/DeepSeek-R1-Distill-Qwen-7B/ds-qw-7b.gguf
 root@VM-0-14-ubuntu:/home/ubuntu# vi ~/.ollama/models/ds-r1-qw-7b.txt
 root@VM-0-14-ubuntu:/home/ubuntu# ollama create  ds-qw-7b  -f  ~/.ollama/models/ds-r1-qw-7b.txt
 gathering model components ⠼
